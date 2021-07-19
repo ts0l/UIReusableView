@@ -1,3 +1,5 @@
+#if os(iOS)
+
 import UIKit
 
 public protocol UIReusableView: UIView {
@@ -35,3 +37,5 @@ public extension UIReusableView where Self: UITableViewCell {
         tableView.register(UINib(nibName: identifier, bundle: nil), forCellReuseIdentifier: identifier)
     }
 }
+
+#endif
