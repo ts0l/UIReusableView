@@ -18,7 +18,7 @@ public extension UIReusableView {
 }
 
 public extension UIReusableView where Self: UICollectionViewCell {
-    static func load<T: UIReusableView>() -> T {
+    static func loadNib<T: UIReusableView>() -> T {
         Bundle.main.loadNibNamed(identifier, owner: nil)!.first as! T
     }
 
@@ -32,7 +32,7 @@ public extension UIReusableView where Self: UICollectionViewCell {
 }
 
 public extension UIReusableView where Self: UITableViewCell {
-    static func load<T: UIReusableView>() -> T {
+    static func loadNib<T: UIReusableView>() -> T {
         Bundle.main.loadNibNamed(identifier, owner: nil)!.first as! T
     }
 
