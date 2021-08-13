@@ -45,4 +45,10 @@ public extension UIReusableView where Self: UITableViewCell {
     }
 }
 
+public extension UIReusableView where Self: UIView {
+    static func loadNib<T: UIReusableView>() -> T {
+        Bundle.main.loadNibNamed(identifier, owner: nil)!.first as! T
+    }
+}
+
 #endif
