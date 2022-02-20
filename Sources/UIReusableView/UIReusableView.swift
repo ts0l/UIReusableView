@@ -45,6 +45,20 @@ public extension UIReusableView where Self: UITableViewCell {
     }
 }
 
+public extension UIReusableView where Self: UITableViewHeaderFooterView {
+    static func loadNib<T: UIReusableView>() -> T {
+        Bundle.main.loadNibNamed(identifier, owner: nil)!.first as! T
+    }
+
+    static func dequeue<T: UIReusableView>(from tableView: UITableView) -> T {
+        tableView.dequeueReusableHeaderFooterView(withIdentifier: identifier) as! T
+    }
+
+    static func register(in tableView: UITableView) {
+        tableView.register(UINib(nibName: identifier, bundle: nil), forHeaderFooterViewReuseIdentifier: identifier)
+    }
+}
+
 public extension UIReusableView where Self: UIView {
     static func loadNib<T: UIReusableView>() -> T {
         Bundle.main.loadNibNamed(identifier, owner: nil)!.first as! T
