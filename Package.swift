@@ -4,7 +4,7 @@ import PackageDescription
 
 let package = Package(
     name: "UIReusableView",
-    platforms: [.iOS(.v13)],
+    platforms: [.iOS(.v12)],
     products: [
         .library(
             name: "UIReusableView",
